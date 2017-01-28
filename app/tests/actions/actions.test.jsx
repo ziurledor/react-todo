@@ -97,7 +97,7 @@ describe('Actions', () => {
     beforeEach((done) => {
       firebase.auth().signInAnonymously().then((user) => {
         uid = user.uid;
-        todosRef = firebase.child(`users/${uid}/todos`);
+        todosRef = firebaseRef.child(`users/${uid}/todos`);
 
         return todosRef.remove();
       }).then(() => {
